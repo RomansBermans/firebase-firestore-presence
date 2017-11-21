@@ -1,5 +1,20 @@
 {
+  "database": {
+    "rules": "rules.bolt"
+  },
+  "firestore": {
+    "rules": "rules.firestore"
+  },
   "functions": {
   	"source": "."
+  },
+  "hosting": {
+    "public": ".",
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/app.html"
+      }
+    ]
   }
 }
