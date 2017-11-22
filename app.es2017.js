@@ -67,9 +67,9 @@ function monitor() {
         let text;
 
         if (change.type === 'added') {
-          text = `😎 ${change.doc.id}`;
+          text = `😎 ${change.doc.id} ONLINE`;
         } else if (change.type === 'removed') {
-          text = `😵 ${change.doc.id}`;
+          text = `😵 ${change.doc.id} OFFLINE`;
         }
 
         if (text) {
