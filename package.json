@@ -25,10 +25,11 @@
     "predeploy:functions": "npm run build:functions",
     "deploy:functions": "firebase deploy --only functions",
 
+    "predeploy": "npm test",
     "deploy": "npm run deploy:app && npm run deploy:database && npm run deploy:functions"
   },
   "dependencies": {
-    "cors": "^2.8.4",
+    "firebase": "^4.6.2",
     "firebase-admin": "^5.5.0",
     "firebase-functions": "^0.7.3"
   },

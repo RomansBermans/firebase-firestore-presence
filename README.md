@@ -5,7 +5,7 @@
 2. Create a project on [Firebase](https://console.firebase.google.com/) and note down the Project ID
 3. Replace the project id in the `.firebaserc` with your Project ID
 4. Click **Add Firebase to your web app** and copy your Initialization Code
-5. Replace the initialization code in the `app.js` with your Initialization Code
+5. Replace the initialization code in the `app.es2017.js` with your Initialization Code
 
 ## Install
 ```

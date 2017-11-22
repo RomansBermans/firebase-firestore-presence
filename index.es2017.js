@@ -4,21 +4,21 @@
 const Firebase = require('firebase-admin');
 const Functions = require('firebase-functions');
 
-// const cors = require('cors')({ origin: true });
-
 
 /* ********* INIT ********* */
 
 
 Firebase.initializeApp(Functions.config().firebase);
 
-// const DATABASE_TIMESTAMP = Firebase.database.ServerValue.TIMESTAMP;
-// const FIRESTORE_TIMESTAMP = Firebase.firestore.FieldValue.serverTimestamp();
-
 
 /* ********* FUNCTIONS ********* */
 
 
 module.exports = {
-  // TODO:
+  status: Functions.database.ref('/status/{uid}').onUpdate(async event => {
+    const status = event.data.val();
+    if (status.state === 'offline') {
+      return Firebase.firestore().doc(`status/${event.params.uid}`).set({ ...status, modified: new Date(status.modified) });
+    }
+  }),
 };
