@@ -60,6 +60,8 @@ function status(success = () => {}, failure = () => {}) {
 }
 
 function monitor() {
+  const { uid } = firebase.auth().currentUser;
+
   firebase.firestore().collection('status')
     .where('state', '==', 'online')
     .onSnapshot(collection => {
@@ -73,13 +75,16 @@ function monitor() {
         }
 
         if (text) {
-          let el = document.querySelector(`#${change.doc.id}`);
+          let el = document.querySelector(`#UID-${change.doc.id}`);
           if (!el) {
             el = document.createElement('div');
-            el.id = change.doc.id;
-            document.querySelector('#presence').appendChild(el);
+            el.id = `UID-${change.doc.id}`;
+            if (change.doc.id === uid) {
+              el.classList.add('me');
+            }
+            document.body.appendChild(el);
           }
-          el.innerHTML = `${text}`;
+          el.innerHTML = text;
         }
       });
     });
