@@ -15,6 +15,11 @@
         "source": "**",
         "destination": "/app.html"
       }
+    ],
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
     ]
   }
 }

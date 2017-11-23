@@ -4,33 +4,22 @@
   "scripts": {
     "pretest": "eslint --ext .js .",
     "test": ":",
-
-
     "build:app": "babel app.es2017.js -o app.js",
     "build:app:watch": "babel -w app.es2017.js -o app.js",
-
     "build:functions": "babel index.es2017.js -o index.js",
     "build:functions:watch": "babel -w index.es2017.js -o index.js",
-
-
     "prestart": "npm run build:app:watch &",
     "start": "firebase serve --only hosting",
-
-
     "predeploy:app": "npm run build:app",
     "deploy:app": "firebase deploy --only hosting",
-
     "deploy:database": "firebase deploy --only database && firebase deploy --only firestore",
-
     "predeploy:functions": "npm run build:functions",
     "deploy:functions": "firebase deploy --only functions",
-
     "predeploy": "npm test",
     "deploy": "npm run deploy:app && npm run deploy:database && npm run deploy:functions"
   },
   "dependencies": {
-    "firebase": "^4.6.2",
-    "firebase-admin": "^5.5.0",
+    "firebase-admin": "^5.5.1",
     "firebase-functions": "^0.7.3"
   },
   "devDependencies": {
@@ -41,7 +30,7 @@
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.8.0",
     "firebase-bolt": "^0.8.2",
-    "firebase-tools": "^3.15.2"
+    "firebase-tools": "^3.15.3"
   },
   "repository": {
     "type": "git",
