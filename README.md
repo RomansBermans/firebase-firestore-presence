@@ -43,8 +43,8 @@ https://prototype-a7997.firebaseapp.com/
 
 ## Learn More
 
-[Firebase Cloud Functions](https://firebase.google.com/docs/functions/)
-
 [Firebase Realtime Database](https://firebase.google.com/docs/database/)
 
 [Firebase Cloud Firestore](https://firebase.google.com/docs/firestore/)
+
+[Firebase Cloud Functions](https://firebase.google.com/docs/functions/)
