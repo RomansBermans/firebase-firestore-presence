@@ -15,10 +15,11 @@ Firebase.initializeApp(Functions.config().firebase);
 
 
 module.exports = {
-  status: Functions.database.ref('/status/{uid}').onUpdate(event => {
-    const status = event.data.val();
-    if (status.state === 'offline') {
-      return Firebase.firestore().doc(`status/${event.params.uid}`).set({ ...status, modified: new Date(status.modified) });
+  presence: Functions.database.ref('/users/{uid}').onUpdate(event => {
+    const presence = event.data.val();
+
+    if (presence.state === 'offline') {
+      return Firebase.firestore().doc(`users/${event.params.uid}`).set({ ...presence, modified: new Date(presence.modified) });
     }
   }),
 };

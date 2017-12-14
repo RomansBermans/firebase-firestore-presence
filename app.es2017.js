@@ -27,14 +27,14 @@ function presence() {
 
   firebase.database().ref('.info/connected').on('value', async connected => {
     if (connected.val() === false) {
-      firebase.firestore().doc(`/status/${uid}`).set({ state: 'offline', modified: FIRESTORE_TIMESTAMP });
+      firebase.firestore().doc(`/users/${uid}`).set({ state: 'offline', modified: FIRESTORE_TIMESTAMP });
       return;
     }
 
-    await firebase.database().ref(`/status/${uid}`).onDisconnect().set({ state: 'offline', modified: DATABASE_TIMESTAMP });
+    await firebase.database().ref(`/users/${uid}`).onDisconnect().set({ state: 'offline', modified: DATABASE_TIMESTAMP });
 
-    firebase.firestore().doc(`/status/${uid}`).set({ state: 'online', modified: FIRESTORE_TIMESTAMP });
-    firebase.database().ref(`/status/${uid}`).set({ state: 'online', modified: DATABASE_TIMESTAMP });
+    firebase.firestore().doc(`/users/${uid}`).set({ state: 'online', modified: FIRESTORE_TIMESTAMP });
+    firebase.database().ref(`/users/${uid}`).set({ state: 'online', modified: DATABASE_TIMESTAMP });
   });
 }
 
@@ -42,7 +42,7 @@ function status(success = () => {}, failure = () => {}) {
   const { uid } = firebase.auth().currentUser;
 
   return new Promise((resolve, reject) => {
-    const unbind = firebase.firestore().doc(`/status/${uid}`).onSnapshot(
+    const unbind = firebase.firestore().doc(`/users/${uid}`).onSnapshot(
       document => {
         const { ref, exists } = document;
 
@@ -62,7 +62,7 @@ function status(success = () => {}, failure = () => {}) {
 function monitor() {
   const { uid } = firebase.auth().currentUser;
 
-  firebase.firestore().collection('status')
+  firebase.firestore().collection('users')
     .where('state', '==', 'online')
     .onSnapshot(collection => {
       collection.docChanges.forEach(change => {
