@@ -29,18 +29,18 @@
     "deploy": "npm run deploy:app && npm run deploy:database && npm run deploy:functions"
   },
   "dependencies": {
-    "firebase-admin": "^5.5.1",
-    "firebase-functions": "^0.7.3"
+    "firebase-admin": "^5.8.2",
+    "firebase-functions": "^0.8.1"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-es2017": "^6.24.1",
-    "eslint": "^4.11.0",
+    "eslint": "^4.16.0",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.8.0",
     "firebase-bolt": "^0.8.2",
-    "firebase-tools": "^3.15.3"
+    "firebase-tools": "^3.17.4"
   },
   "repository": {
     "type": "git",
