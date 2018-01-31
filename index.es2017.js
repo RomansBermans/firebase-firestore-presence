@@ -21,5 +21,7 @@ module.exports = {
     if (presence.state === 'offline') {
       return Firebase.firestore().doc(`users/${event.params.uid}`).set({ ...presence, modified: new Date(presence.modified) });
     }
+
+    return null;
   }),
 };
