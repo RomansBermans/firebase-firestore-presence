@@ -40,9 +40,6 @@ npm run deploy:functions
 npm run deploy
 ```
 
-## Demo
-https://prototype-a7997.firebaseapp.com/
-
 ## Learn More
 
 [Firebase Realtime Database](https://firebase.google.com/docs/database/)
