@@ -29,7 +29,7 @@
     "deploy": "npm run deploy:app && npm run deploy:database && npm run deploy:functions"
   },
   "dependencies": {
-    "firebase-admin": "^5.8.2",
+    "firebase-admin": "^11.5.0",
     "firebase-functions": "^0.8.1"
   },
   "devDependencies": {
@@ -40,7 +40,7 @@
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.8.0",
     "firebase-bolt": "^0.8.2",
-    "firebase-tools": "^3.17.4"
+    "firebase-tools": "^11.22.0"
   },
   "repository": {
     "type": "git",
