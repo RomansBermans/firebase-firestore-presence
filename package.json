@@ -29,7 +29,7 @@
     "deploy": "npm run deploy:app && npm run deploy:database && npm run deploy:functions"
   },
   "dependencies": {
-    "firebase-admin": "^5.8.2",
+    "firebase-admin": "^11.11.1",
     "firebase-functions": "^0.8.1"
   },
   "devDependencies": {
