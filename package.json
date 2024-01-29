@@ -40,7 +40,7 @@
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.8.0",
     "firebase-bolt": "^0.8.2",
-    "firebase-tools": "^3.17.4"
+    "firebase-tools": "^3.19.3"
   },
   "repository": {
     "type": "git",
